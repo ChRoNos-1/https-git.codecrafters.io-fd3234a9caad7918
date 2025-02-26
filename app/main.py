@@ -1,5 +1,5 @@
 import sys
-
+import shutil
 
 def main():
     # Uncomment this block to pass the first stage
@@ -12,6 +12,8 @@ def main():
         if argv[0] == "type":
             if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type":
                 print (f"{argv[1]} is a shell builtin")
+            elif path:= shutil.which(command):
+                print(f"{command[5:]} is {path}")
             else:
                 print(f"{command[5:]}: not found")
         elif argv[0] == "exit":
