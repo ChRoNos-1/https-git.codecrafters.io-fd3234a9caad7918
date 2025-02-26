@@ -12,7 +12,7 @@ def main():
         if argv[0] == "type":
             if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type":
                 print (f"{argv[1]} is a shell builtin")
-            elif path:= shutil.which(command):
+            elif path := shutil.which(argv[1]):
                 print(f"{command[5:]} is {path}")
             else:
                 print(f"{command[5:]}: not found")
