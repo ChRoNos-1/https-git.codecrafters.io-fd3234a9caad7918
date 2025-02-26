@@ -14,7 +14,7 @@ def main():
         if path := shutil.which(argv[0]):
             subprocess.run(argv)
             
-        if argv[0] == "type":
+        elif argv[0] == "type":
             if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type":
                 print (f"{argv[1]} is a shell builtin")
             elif path := shutil.which(argv[1]):
