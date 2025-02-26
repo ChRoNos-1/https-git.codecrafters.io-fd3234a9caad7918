@@ -9,7 +9,7 @@ def main():
     command = input()
     if command == "exit 0":
         sys.exit(0)
-    print(f"{command}: command not found")
+    print(f"{command}")
     main()
     
 
