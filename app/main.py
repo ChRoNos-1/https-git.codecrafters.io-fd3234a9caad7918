@@ -9,7 +9,7 @@ def main():
     command = input()
     if command == "exit 0":
         sys.exit(0)
-    elif command[0:3]=="echo":
+    elif command[0:4]==" echo":
         print (command[0:3])
         #print(command[5::])
     else:
