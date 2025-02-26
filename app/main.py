@@ -6,15 +6,15 @@ def main():
     sys.stdout.write("$ ")
 
     # Wait for user input
-    command = input()
-    if command == "exit 0":
-        sys.exit(0)
-    elif command[0:4]==" echo":
-        print (command[0:3])
+    command,  = input()
+    argv = command.split()
+    if argv[0] == "exit":
+        exit(int(argv[1]))
+    elif argv[0] == "exit":
+        print (" ".join(argv[1:]))
         #print(command[5::])
     else:
-        print (command[0:4])
-        #print(f"{command}: command not found")
+        print(f"{command}: command not found")
     
     main()
     
