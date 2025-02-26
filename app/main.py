@@ -9,7 +9,7 @@ def main():
     command = input()
     if command == "exit 0":
         sys.exit(0)
-    print(f"{command}")
+    print(command[5::])
     main()
     
 
