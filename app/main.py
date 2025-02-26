@@ -7,7 +7,7 @@ def main():
         sys.stdout.write("$ ")
 
     # Wait for user input
-        command,  = input()
+        command  = input()
         argv = command.split()
         if argv[0] == "exit":
             exit(int(argv[1]))
