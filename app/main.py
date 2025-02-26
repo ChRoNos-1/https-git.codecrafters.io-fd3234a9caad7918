@@ -13,7 +13,7 @@ def main():
         print (command[0:3])
         #print(command[5::])
     else:
-        command[0:4]
+        print (command[0:4])
         #print(f"{command}: command not found")
     
     main()
