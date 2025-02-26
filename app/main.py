@@ -13,7 +13,7 @@ def main():
             if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type":
                 print (f"{argv[1]} is a shell builtin")
             else:
-                print(f"{argv[5:]}: not found")
+                print(f"{command[5:]}: not found")
         elif argv[0] == "exit":
             exit(int(argv[1]))
         elif argv[0] == "echo":
