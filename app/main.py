@@ -9,7 +9,12 @@ def main():
     # Wait for user input
         command  = input()
         argv = command.split()
-        if argv[0] == "exit":
+        if argv[0] == "type":
+            if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type":
+                print (f"{argv[1]} is a shell builtin")
+            else:
+                print(f"{argv[5:]}: not found")
+        elif argv[0] == "exit":
             exit(int(argv[1]))
         elif argv[0] == "echo":
             print (" ".join(argv[1:]))
