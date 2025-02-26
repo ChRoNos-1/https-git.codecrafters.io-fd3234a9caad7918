@@ -11,7 +11,7 @@ def main():
     if argv[0] == "exit":
         exit(int(argv[1]))
     elif argv[0] == "echo":
-        print (" ".join(argv[1:]))
+        print ("".join(argv[1:]))
         #print(command[5::])
     else:
         print(f"{command}: command not found")
