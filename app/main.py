@@ -10,7 +10,7 @@ def main():
     argv = command.split()
     if argv[0] == "exit":
         exit(int(argv[1]))
-    elif argv[0] == "exit":
+    elif argv[0] == "echo":
         print (" ".join(argv[1:]))
         #print(command[5::])
     else:
