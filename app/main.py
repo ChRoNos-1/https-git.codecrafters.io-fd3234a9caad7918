@@ -10,7 +10,9 @@ def main():
         command  = input()
         argv = command.split()
         if path := shutil.which(argv[0]):
-            print (f"Arg #0 (program name): {argv[0]}/n")
+            cnt= len(command.split())
+            print (f"Program was passed {cnt} args (incuding program name)")
+            print (f"Arg #0 (program name): {argv[0]}\n")
             print (f"Arg #1: {argv[1]}")
         if argv[0] == "type":
             if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type":
