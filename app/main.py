@@ -19,7 +19,7 @@ def main():
             if os.path.isdir(argv[1]):
                 os.chdir(argv[1])
             else:
-                print(f"cd: {argv[1]}: no such file or directory")
+                print(f"cd: {argv[1]}: No such file or directory")
             
         elif argv[0]== "pwd":
             print (f"{os.getcwd()}")
