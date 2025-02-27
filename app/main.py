@@ -3,6 +3,28 @@ import shutil
 import subprocess
 import os
 import shlex
+import readline
+
+bic = ['echo', 'exit', 'cd', 'pwd', 'type']
+
+def gex ():
+    paths = os.environ.get("PATH","").split(os.pathsep)
+    execs = set()
+    for p in paths:
+        if os.path.isdir(p):
+            for f in os.listdir(p):
+                fp = os.path.join (p,f)
+                if os.access(fp, os.X_OK):
+                    execs.add(f)
+    return execs
+
+def autoc (text, state):
+    cs = bic + list(gex())
+    ms = [cmd for cmd in cs if cmd.startswith(text)]
+    return ms[state] if state < len(ms) else None
+    
+readline.parse_and_bind("tab: complete")
+readline.set_completer(autoc)
 
 def main():
     # Uncomment this block to pass the first stage
