@@ -28,7 +28,7 @@ def main():
             print (f"{os.getcwd()}")
             
         elif argv[0] == "type":
-            if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type" or argv[1]=="pwd" or argv[1]=="cd":
+            if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type" or argv[1]=="pwd" or argv[1]=="cd" or argv[1]=="cat":
                 print (f"{argv[1]} is a shell builtin")
             elif path := shutil.which(argv[1]):
                 print(f"{command[5:]} is {path}")
@@ -39,7 +39,7 @@ def main():
             exit(int(argv[1]))
             
         elif argv[0] == "echo":
-            if command.startswith("'") and command.endswith("'"):
+            if argv[1].startswith("'") and argv[1].endswith("'"):
                 msg = command [6:-1]
                 print (msg)
             else:
