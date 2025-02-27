@@ -23,6 +23,13 @@ def main():
             with open (opfl,"w") as file:
                 subprocess.run(argv, stdout=file, stderr=sys.stderr)
             continue
+        elif '2>' in argv:
+            rin = argv.index("2>")
+            opfl = argv[rin + 1]
+            
+            with open (opfl,"w") as file:
+                subprocess.run (argv, stderr=file)
+                continue
         
         elif path := shutil.which(argv[0]):
             subprocess.run(argv)
