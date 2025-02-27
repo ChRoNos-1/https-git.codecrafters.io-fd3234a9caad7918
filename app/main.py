@@ -39,7 +39,7 @@ def main():
                 rin = argv.index('1>>')
             opfl = argv[rin + 1]
             argv = argv[:rin]
-            with open (opfl,"w") as file:
+            with open (opfl,"a") as file:
                 subprocess.run(argv, stdout=file, stderr=sys.stderr)
         
         elif path := shutil.which(argv[0]):
