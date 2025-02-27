@@ -39,8 +39,11 @@ def main():
             exit(int(argv[1]))
             
         elif argv[0] == "echo":
-            #print (" ".join(argv[1:]))
-            print(command[7:-2:])
+            if command.startswith("'") and command.endswith("'"):
+                msg = command [6:-1]
+            else:
+                print (" ".join(argv[1:]))
+            #print(command[7:-2:])
             
         else:
             print(f"{command}: command not found")
