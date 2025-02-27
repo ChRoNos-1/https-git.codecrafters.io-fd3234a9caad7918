@@ -42,6 +42,7 @@ def main():
             if command.startswith("'") and command.endswith("'"):
                 msg = command [6:-1]
             else:
+                print("pokemon")
                 print (" ".join(argv[1:]))
             #print(command[7:-2:])
             
