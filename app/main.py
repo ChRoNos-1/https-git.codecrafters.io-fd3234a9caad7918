@@ -31,7 +31,7 @@ def autoc (text, state):
             return None
         
     elif cn == 1:
-        if ms:
+        if ms > 1:
             print ("\n" + "  ".join(ms))
             sys.stdout.write("$ " + text)
             sys.stdout.flush()
