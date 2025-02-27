@@ -8,7 +8,7 @@ import readline
 bic = ['echo ', 'exit', 'cd', 'pwd', 'type']
 
 def gex ():
-    paths = os.environ.get("PATH","").split(os.pathsep)
+    paths = os.environ.get("PATH"," ").split(os.pathsep)
     execs = set()
     for p in paths:
         if os.path.isdir(p):
