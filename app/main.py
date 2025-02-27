@@ -21,6 +21,8 @@ def gex ():
 def autoc (text, state):
     cs = bic + list(gex())
     ms = [cmd for cmd in cs if cmd.startswith(text)]
+    if text=="echo":
+        return("echo ")
     return ms[state] if state < len(ms) else None
     
 readline.parse_and_bind("tab: complete")
