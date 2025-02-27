@@ -33,7 +33,7 @@ def autoc (text, state):
             print ("\n" + "  ".join(ms))
             sys.stdout.write("$ " + text)
             sys.stdout.flush()
-        cn = 0
+            cn = 0
         return None
             
     return ms[state] if state < len(ms) else None
