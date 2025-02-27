@@ -5,7 +5,7 @@ import os
 import shlex
 import readline
 
-bic = ['echo', 'exit', 'cd', 'pwd', 'type']
+bic = ['echo ', 'exit', 'cd', 'pwd', 'type']
 
 def gex ():
     paths = os.environ.get("PATH","").split(os.pathsep)
