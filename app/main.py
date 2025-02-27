@@ -1,6 +1,7 @@
 import sys
 import shutil
 import subprocess
+import os
 
 def main():
     # Uncomment this block to pass the first stage
@@ -15,7 +16,7 @@ def main():
             subprocess.run(argv)
             
         elif argv[0]== "pwd":
-            print (shutil.which(argv[0]))
+            print (f"{os.getcwd()}")
             
         elif argv[0] == "type":
             if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type" or argv[1]=="pwd":
