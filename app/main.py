@@ -2,6 +2,7 @@ import sys
 import shutil
 import subprocess
 import os
+import shlex
 
 def main():
     # Uncomment this block to pass the first stage
@@ -11,14 +12,13 @@ def main():
 
     # Wait for user input
         command  = input()
-        argv = command.split()
+        argv = shlex.split(command)
         if path := shutil.which(argv[0]):
             subprocess.run(argv)
             
         elif argv[0] == "cd":
             path = argv[1]
             path = os.path.expanduser(path)
-            
             if os.path.isdir(path):
                 os.chdir(path)
             else:
@@ -39,12 +39,7 @@ def main():
             exit(int(argv[1]))
             
         elif argv[0] == "echo":
-            if argv[1].startswith("'") and argv[1].endswith("'"):
-                msg = command [6:-1]
-                print (msg)
-            else:
-                
-                print (" ".join(argv[1:]))
+            print (" ".join(argv[1:]))
             #print(command[7:-2:])
             
         else:
