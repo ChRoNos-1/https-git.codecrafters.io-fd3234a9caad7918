@@ -31,6 +31,16 @@ def main():
             with open (opfl,"w") as file:
                 subprocess.run (argv, stderr=file)
                 continue
+            
+        elif '1>>' in argv or '>>' in argv:
+            if '>>' in argv:
+                rin = argv.index('>>')
+            else:
+                rin = argv.index('1>>')
+            opfl = argv[rin + 1]
+            argv = argv[:rin]
+            with open (opfl,"w") as file:
+                subprocess.run(argv, stdout=file, stderr=sys.stderr)
         
         elif path := shutil.which(argv[0]):
             subprocess.run(argv)
