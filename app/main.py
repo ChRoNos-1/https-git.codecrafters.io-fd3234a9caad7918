@@ -26,6 +26,7 @@ def main():
         elif '2>' in argv:
             rin = argv.index("2>")
             opfl = argv[rin + 1]
+            argvm = argv[:rin]
             
             with open (opfl,"w") as file:
                 subprocess.run (argv, stderr=file)
