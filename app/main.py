@@ -40,6 +40,7 @@ def autoc (text, state):
             
     return ms[state] if state < len(ms) else None
     
+readline.set_completion_display_matches_hook(ms)
 readline.parse_and_bind("tab: complete")
 readline.set_completer(autoc)
 
