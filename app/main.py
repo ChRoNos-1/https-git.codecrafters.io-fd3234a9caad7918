@@ -15,11 +15,17 @@ def main():
         if path := shutil.which(argv[0]):
             subprocess.run(argv)
             
+        elif argv[0] == "cd":
+            if os.path.isdir(argv[1]):
+                os.chdir(argv[1])
+            else:
+                print(f"cd: {argv[1]}: no such file or directory")
+            
         elif argv[0]== "pwd":
             print (f"{os.getcwd()}")
             
         elif argv[0] == "type":
-            if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type" or argv[1]=="pwd":
+            if argv[1]=="exit" or argv[1]=="echo" or argv[1]=="type" or argv[1]=="pwd" or argv[1]=="cd":
                 print (f"{argv[1]} is a shell builtin")
             elif path := shutil.which(argv[1]):
                 print(f"{command[5:]} is {path}")
