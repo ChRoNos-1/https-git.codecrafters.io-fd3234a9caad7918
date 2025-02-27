@@ -20,6 +20,7 @@ def gex ():
     return execs
 
 def autoc (text, state):
+    global cn
     cs = bic + list(gex())
     ms = [cmd for cmd in cs if cmd.startswith(text)]
     if state == 0:
