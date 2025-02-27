@@ -19,6 +19,12 @@ def gex ():
                     execs.add(f + " ")
     return execs
 
+def display_matches(substitution, matches, longest_match_length):
+    print()
+    if matches:
+        print("  ".join(matches))
+    print("$ " + substitution, end="")
+
 def autoc (text, state):
     global cn
     cs = bic + list(gex())
@@ -39,7 +45,8 @@ def autoc (text, state):
         return None
             
     return ms[state] if state < len(ms) else None
-    
+
+readline.set_completion_display_matches_hook(display_matches)    
 readline.parse_and_bind("tab: complete")
 readline.set_completer(autoc)
 
