@@ -13,7 +13,18 @@ def main():
     # Wait for user input
         command  = input()
         argv = shlex.split(command)
-        if path := shutil.which(argv[0]):
+        if ">" in argv or "1>" in argv:
+            if '>' in argv:
+                rin = argv.index('>')
+            else:
+                rin = argv.index('1>')
+            opfl = argv[rin + 1]
+            argv = argv[:rin]
+            with open (opfl,"w") as file:
+                subprocess.run(argv, stdout=file, stderr=sys.stderr)
+            continue
+        
+        elif path := shutil.which(argv[0]):
             subprocess.run(argv)
             
         elif argv[0] == "cd":
