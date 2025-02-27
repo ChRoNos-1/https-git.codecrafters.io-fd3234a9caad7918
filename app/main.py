@@ -15,7 +15,7 @@ def gex ():
             for f in os.listdir(p):
                 fp = os.path.join (p,f)
                 if os.access(fp, os.X_OK):
-                    execs.add(f)
+                    execs.add(f + " ")
     return execs
 
 def autoc (text, state):
