@@ -34,7 +34,6 @@ def autoc (text, state):
             sys.stdout.write("\a")
             sys.stdout.flush()
             cn = 1
-            continue
         
     elif cn == 1:
         if ms > 1:
