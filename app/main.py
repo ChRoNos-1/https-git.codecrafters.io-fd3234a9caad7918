@@ -40,7 +40,7 @@ def main():
             
         elif argv[0] == "echo":
             #print (" ".join(argv[1:]))
-            print(command[6:-1:])
+            print(command[7:-2:])
             
         else:
             print(f"{command}: command not found")
