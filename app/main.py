@@ -21,8 +21,21 @@ def gex ():
 def autoc (text, state):
     cs = bic + list(gex())
     ms = [cmd for cmd in cs if cmd.startswith(text)]
-    if text=="echo":
-        ms = ["echo "]
+    if state == 0:
+        if len(ms) > 1:
+            sys.stdout.write("\a")
+            sys.stdout.flush()
+            cn = 1
+            return None
+        
+    elif state==1 and cn == 1:
+        if ms:
+            print ('\n' + "  ".join(ms))
+            sys.stdout.write("$ " + text)
+            sys.stdout.flush()
+        cn = 0
+        return None
+            
     return ms[state] if state < len(ms) else None
     
 readline.parse_and_bind("tab: complete")
