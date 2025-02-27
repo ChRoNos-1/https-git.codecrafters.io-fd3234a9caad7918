@@ -19,7 +19,7 @@ def gex ():
     return execs
 
 def autoc (text, state):
-    cs = bic + list(gex())
+    cs = bic
     ms = [cmd for cmd in cs if cmd.startswith(text)]
     if text=="echo":
         ms = ["echo "]
