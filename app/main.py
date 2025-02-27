@@ -16,10 +16,13 @@ def main():
             subprocess.run(argv)
             
         elif argv[0] == "cd":
-            if os.path.isdir(argv[1]):
-                os.chdir(argv[1])
+            path = argv[1]
+            path = os.path.expanduser(path)
+            
+            if os.path.isdir(path):
+                os.chdir(path)
             else:
-                print(f"cd: {argv[1]}: No such file or directory")
+                print(f"cd: {path}: No such file or directory")
             
         elif argv[0]== "pwd":
             print (f"{os.getcwd()}")
