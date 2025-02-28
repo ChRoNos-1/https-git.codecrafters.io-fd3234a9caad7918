@@ -35,7 +35,6 @@ def autoc (text, state):
         if len(ms) > 1:
             print ("\n" + " ".join(ms))
             sys.stdout.write("$ " + tem)
-            sys.stdout.flush()
             cn = 0
         return None
             
