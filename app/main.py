@@ -40,9 +40,15 @@ def autoc (text, state):
             sys.stdout.flush()
             cn = 0
         return None
-     
+    if len(ms)==1:
+        return ms[state]
+    elif len(ms)> 1:
+        return text
+    else:
+        return None 
+    
     #return ms[state] if len(ms)== 1  else text       
-    return None
+    
 
 #readline.set_completion_display_matches_hook(display_matches)    
 readline.parse_and_bind("tab: complete")
