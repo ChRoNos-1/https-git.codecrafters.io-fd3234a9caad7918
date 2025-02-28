@@ -22,7 +22,6 @@ def gex ():
 
 def autoc (text, state):
     tem = text
-    global cn
     cs = bic + list(gex())
     ms = sorted([cmd for cmd in cs if cmd.startswith(text)])
     if state == 0:
@@ -34,7 +33,8 @@ def autoc (text, state):
     elif cn == 1:
         if len(ms) > 1:
             print ("\n" + " ".join(ms))
-            sys.stdout.write("xxx" + tem)
+            sys.stdout.write("$ " + tem)
+
             cn = 0
         return None
             
@@ -42,7 +42,7 @@ def autoc (text, state):
 
 #readline.set_completion_display_matches_hook(display_matches)    
 readline.parse_and_bind("tab: complete")
-readline.set_completer(autoc)
+#readline.set_completer(autoc)
 
 def main():
     # Uncomment this block to pass the first stage
