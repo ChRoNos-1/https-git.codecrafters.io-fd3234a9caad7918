@@ -19,19 +19,38 @@ def gex ():
                     execs.add(f + " ")
     return execs
 
+def lcp(str):
+    if not str:
+        return ""
+    pre = str[0]
+    for s in str[1:]:
+        while not s.startswith(pre):
+            pre = pre[:-1]
+            if not pre:
+                return ""
+    return pre
 
 def autoc (text, state):
     global cn
     nt = 1
     cs = list(set(bic + list(gex())))
     ms = sorted([cmd for cmd in cs if cmd.startswith(text)])
+    
+    if not ms:
+        return None
+    lon = lcp(ms)
     if state == 0:
-        if len(ms) > 1:
+        
+        if lcp and lcp!=text:
+            return lcp
+        elif len(ms)==1:
+            return ms[0]
+        else:
             sys.stdout.write("\a")
             sys.stdout.flush()
             cn = 1
-        elif len(ms)==1:
-            return ms[0]
+            return None
+        
         
     elif cn == 1:
         if len(ms) > 1:
