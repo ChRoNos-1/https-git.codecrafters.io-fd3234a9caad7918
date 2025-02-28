@@ -23,7 +23,7 @@ def gex ():
 def autoc (text, state):
     global cn
     nt = 1
-    cs = bic + list(gex())
+    cs = list(set(bic + list(gex())))
     ms = sorted([cmd for cmd in cs if cmd.startswith(text)])
     if state == 0:
         if len(ms) > 1:
