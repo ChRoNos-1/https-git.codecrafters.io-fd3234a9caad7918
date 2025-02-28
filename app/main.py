@@ -21,6 +21,7 @@ def gex ():
 
 
 def autoc (text, state):
+    tem = text
     global cn
     cs = bic + list(gex())
     ms = sorted([cmd for cmd in cs if cmd.startswith(text)])
@@ -33,7 +34,7 @@ def autoc (text, state):
     elif cn == 1:
         if len(ms) > 1:
             print ("\n" + " ".join(ms))
-            sys.stdout.write("$ " )
+            sys.stdout.write("$ " + tem)
             sys.stdout.flush()
             cn = 0
         return None
