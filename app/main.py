@@ -67,7 +67,7 @@ def autoc (text, state):
         else:
             return text
     else:
-        return None 
+        return "xyz" 
     
     #return ms[state] if len(ms)== 1  else text       
     
