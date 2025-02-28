@@ -34,11 +34,11 @@ def autoc (text, state):
         if len(ms) > 1:
             print ("\n" + " ".join(ms))
             sys.stdout.write("$ " + text)
-            sys.stdout.flush()
+            #sys.stdout.flush()
             cn = 0
         return None
             
-    #return ms[state] if state < len(ms) else None
+    return ms[state] if state < len(ms) else None
 
 #readline.set_completion_display_matches_hook(display_matches)    
 readline.parse_and_bind("tab: complete")
