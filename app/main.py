@@ -64,7 +64,6 @@ def autoc (text, state):
     elif len(ms)> 1:
         if lon and lon!=text:
             return ms[state]
-            #return lon
         else:
             return text
     else:
