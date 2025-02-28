@@ -28,7 +28,7 @@ def display_matches(substitution, matches, longest_match_length):
 def autoc (text, state):
     global cn
     cs = bic + list(gex())
-    ms = [cmd for cmd in cs if cmd.startswith(text)]
+    ms = sorted([cmd for cmd in cs if cmd.startswith(text)])
     if state == 0:
         if len(ms) > 1:
             sys.stdout.write("\a")
