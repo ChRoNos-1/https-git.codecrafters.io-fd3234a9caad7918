@@ -49,7 +49,7 @@ def autoc (text, state):
             sys.stdout.write("\a")
             sys.stdout.flush()
             cn = 1
-            return None
+            
         
         
     elif cn == 1:
@@ -67,7 +67,7 @@ def autoc (text, state):
         else:
             return text
     else:
-        return "xyz" 
+        return 
     
     #return ms[state] if len(ms)== 1  else text       
     
