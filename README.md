@@ -1,0 +1,1 @@
+this project is 'creating your own shell' from codecrafters. I have done this project with python and since this is my first project, the code is very rudimentary and only barely gets the job done. feel free to give suggestions to improve the code.
