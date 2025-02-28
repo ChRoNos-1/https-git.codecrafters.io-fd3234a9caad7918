@@ -38,7 +38,7 @@ def autoc (text, state):
             cn = 0
         return None
      
-     return text       
+    return text       
     #return ms[state] if state < len(ms) else None
 
 #readline.set_completion_display_matches_hook(display_matches)    
