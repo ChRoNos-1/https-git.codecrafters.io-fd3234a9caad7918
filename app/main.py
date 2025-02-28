@@ -41,8 +41,8 @@ def autoc (text, state):
     lon = lcp(ms)
     if state == 0:
         
-        if lcp and lcp!=text:
-            return lcp
+        if lon and lon!=text:
+            return lon
         elif len(ms)==1:
             return ms[0]
         else:
