@@ -30,6 +30,8 @@ def autoc (text, state):
             sys.stdout.write("\a")
             sys.stdout.flush()
             cn = 1
+        elif len(ms)==1:
+            return ms[0]
         
     elif cn == 1:
         if len(ms) > 1:
@@ -39,8 +41,8 @@ def autoc (text, state):
             cn = 0
         return None
      
-    return ms[state] if len(ms)== 1  else text       
-    #return ms[state] if state < len(ms) else None
+    #return ms[state] if len(ms)== 1  else text       
+    return None
 
 #readline.set_completion_display_matches_hook(display_matches)    
 readline.parse_and_bind("tab: complete")
